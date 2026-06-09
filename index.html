@@ -89,6 +89,8 @@
   }
   .role li{ display:inline-flex;align-items:center;gap:8px }
   .role li:not(:last-child)::after{ content:"";width:3px;height:3px;border-radius:50%;background:var(--faint) }
+  /* location pin in footer */
+  footer .pin{ width:12px; height:12px; fill:currentColor; vertical-align:-1px; opacity:.85; margin-right:1px }
 
   /* ---- Bio ---- */
   .bio{ margin:34px 0 0; padding-top:34px; border-top:2px dotted rgba(27,26,24,.18) }
@@ -150,7 +152,7 @@
       
       <p>I'm looking for my next venture, whether that's starting something new or buying an existing SaaS business. I also organize local founder events and write <a href="https://techoc.co" target="_blank">Tech:OC</a>, a weekly newsletter covering Orange County tech.</p>
 
-      <p>I’m originally from Kentucky, spent eight years in New York City, and now live in Dana Point with my wife and goldendoodle.</p>
+      <p>I’m originally from Kentucky, spent eight years in New York City, and now live in Dana Point with my wife and goldendoodle. <a href="mailto:hi@taylortrusty.com?Subject=Hello!">Feel free to reach out!</a></p>
     </section>
 
     <section class="cta" aria-labelledby="cta-title">
@@ -165,7 +167,7 @@
     </section>
 
     <ul class="social">
-      <li><a href="mailto:taylor@taylortrusty.com" aria-label="Email" title="Email me: taylor@taylortrusty.com">
+      <li><a href="mailto:hi@taylortrusty.com" aria-label="Email" title="Email me: hi@taylortrusty.com">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5zm2.4.4L12 11l7.6-5.6H4.4zM20 6.9l-7.4 5.5a1 1 0 0 1-1.2 0L4 6.9V19h16V6.9z"/></svg>
       </a></li>
       <li><a title="Taylor Trusty's LinkedIn" href="https://www.linkedin.com/in/taylortrusty/" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -177,7 +179,7 @@
       
     </ul>
 
-    <footer>© <span id="yr"></span> Taylor Trusty · Dana Point, CA</footer>
+    <footer>© <span id="yr"></span> Taylor Trusty &nbsp;·&nbsp; <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"/></svg>Dana Point, CA</footer>
   </main>
 
 <script>
