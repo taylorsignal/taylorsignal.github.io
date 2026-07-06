@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reach Rail — We fill your calendar with qualified conversations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#17242F;
+    --navy-2:#1E2F3C;
+    --green:#4CB268;
+    --green-deep:#3B9A56;
+    --green-bright:#63cf82;
+    --paper:#FDFDFC;
+    --slate:#6B7B87;
+    --line:#E5EAED;
+    --line-dark:rgba(255,255,255,.09);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--navy);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+
+  header{padding:30px 0;border-bottom:1px solid var(--line)}
+  .header-row{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy)}
+  .logo svg{width:32px;height:32px}
+  .logo span{font-family:'Sora',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;text-transform:uppercase}
+  .logo span em{font-style:normal;font-weight:400;color:var(--slate)}
+  .header-cta{
+    font-size:14px;font-weight:600;color:#fff;background:var(--navy);text-decoration:none;
+    padding:11px 24px;border-radius:8px;transition:background .2s;
+  }
+  .header-cta:hover{background:var(--green-deep)}
+
+  /* ---------- hero ---------- */
+  .hero{display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:center;padding:92px 0}
+  .kicker{
+    font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--green-deep);
+    display:flex;align-items:center;gap:10px;
+  }
+  .kicker::before{content:"";display:block;width:34px;height:2px;background:var(--green)}
+  h1{
+    font-family:'Sora',sans-serif;font-weight:800;letter-spacing:-.015em;
+    font-size:clamp(38px,4.8vw,58px);line-height:1.08;margin-top:22px;
+  }
+  h1 .accent{color:var(--green-deep)}
+  .hero p{margin-top:24px;font-size:17.5px;line-height:1.68;color:var(--slate);max-width:50ch}
+  .hero-actions{margin-top:36px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .btn{
+    display:inline-block;background:var(--green);color:#0e1a14;
+    font-family:'Sora',sans-serif;font-weight:600;font-size:15px;
+    padding:15px 34px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;
+    transition:background .2s,transform .15s;
+  }
+  .btn:hover{background:var(--green-bright);transform:translateY(-1px)}
+  .hero-note{font-size:13.5px;color:var(--slate)}
+
+  /* reply cards column */
+  .replies{display:grid;gap:18px}
+  .reply{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;
+    box-shadow:0 10px 30px rgba(23,36,47,.06);
+  }
+  .reply.tilt-l{transform:rotate(-1.2deg)}
+  .reply.tilt-r{transform:rotate(1.1deg) translateX(14px)}
+  .reply-head{display:flex;align-items:center;gap:10px}
+  .avatar{
+    width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Sora',sans-serif;font-size:12px;font-weight:600;
+  }
+  .avatar.g{background:var(--green);color:#0e1a14}
+  .reply-name{font-size:13.5px;font-weight:600}
+  .reply-sub{font-size:11.5px;color:var(--slate)}
+  .reply-body{margin-top:12px;font-size:14px;line-height:1.55;color:#2C3E4B}
+  .tag{
+    display:inline-block;margin-top:12px;font-size:11px;font-weight:600;letter-spacing:.07em;
+    text-transform:uppercase;color:var(--green-deep);background:rgba(76,178,104,.1);
+    border-radius:99px;padding:5px 12px;
+  }
+
+  /* ---------- stats band ---------- */
+  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:34px 20px;text-align:center;border-left:1px solid var(--line)}
+  .stat:first-child{border-left:none}
+  .stat b{font-family:'Sora',sans-serif;font-size:26px;font-weight:700;color:var(--navy)}
+  .stat span{display:block;margin-top:6px;font-size:12.5px;color:var(--slate);letter-spacing:.03em}
+
+  /* ---------- how it works (thin) ---------- */
+  .how{padding:88px 0}
+  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px}
+  .step-num{
+    font-family:'Sora',sans-serif;font-weight:700;font-size:15px;color:var(--green-deep);
+  }
+  .step h3{font-family:'Sora',sans-serif;font-size:19px;font-weight:700;margin-top:12px}
+  .step p{margin-top:10px;font-size:15px;line-height:1.65;color:var(--slate)}
+
+  /* ---------- dark form panel ---------- */
+  .contact{background:var(--navy);color:#fff;padding:100px 0 110px}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .contact h2{font-family:'Sora',sans-serif;font-size:clamp(28px,3.4vw,38px);font-weight:700;line-height:1.15;letter-spacing:-.01em}
+  .contact .sub{margin-top:18px;font-size:16.5px;line-height:1.7;color:#9FB0BC;max-width:44ch}
+  .quote{
+    margin-top:36px;border-left:3px solid var(--green);padding-left:20px;
+    font-size:15.5px;line-height:1.65;color:#D7E0E7;font-style:italic;
+  }
+  .quote cite{display:block;margin-top:10px;font-style:normal;font-size:13px;color:#9FB0BC}
+  form{display:grid;gap:16px}
+  label{display:block;font-size:13px;font-weight:600;color:#B9C7D1;margin-bottom:7px}
+  input,textarea{
+    width:100%;background:var(--navy-2);border:1px solid var(--line-dark);border-radius:10px;
+    padding:13px 16px;font-family:'Inter',sans-serif;font-size:15px;color:#fff;
+    outline:none;transition:border-color .2s;
+  }
+  input:focus,textarea:focus{border-color:var(--green)}
+  textarea{resize:vertical;min-height:100px}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-note{font-size:12.5px;color:#9FB0BC;text-align:center}
+  .success{
+    display:none;border:1px solid rgba(76,178,104,.5);border-radius:14px;
+    background:rgba(76,178,104,.1);padding:28px;font-size:15.5px;line-height:1.65;
+  }
+
+  footer{background:var(--navy);border-top:1px solid var(--line-dark);
+    padding:32px 0;text-align:center;font-size:13px;color:#9FB0BC}
+
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;gap:56px;padding:56px 0}
+    .stats-row{grid-template-columns:repeat(2,1fr)}
+    .stat{border-left:none;border-top:1px solid var(--line)}
+    .stat:nth-child(-n+2){border-top:none}
+    .how-grid{grid-template-columns:1fr;gap:36px}
+    .contact-grid{grid-template-columns:1fr;gap:52px}
+    .field-row{grid-template-columns:1fr}
+    .reply.tilt-r{transform:rotate(1.1deg)}
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="header-row">
+    <a class="logo" href="#">
+      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="4,4 30,12 10,21" fill="#4CB268"/>
+        <polygon points="4,27 57,7 32,57 23,36" fill="#4CB268"/>
+      </svg>
+      <span>Reach&nbsp;<em>Rail</em></span>
+    </a>
+    <a class="header-cta" href="#contact">Get in touch</a>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <div>
+    <div class="kicker">Outbound, handled end to end</div>
+    <h1>We fill your calendar with <span class="accent">qualified conversations</span>.</h1>
+    <p>
+      Reach Rail is a done-for-you cold outreach practice. We research your
+      market, write emails people actually answer, and manage deliverability
+      obsessively — then route every interested reply straight to you.
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="#contact">See if we're a fit</a>
+      <span class="hero-note">Honest answers only — including "outbound isn't right for you."</span>
+    </div>
+  </div>
+
+  <div class="replies" aria-hidden="true">
+    <div class="reply tilt-l">
+      <div class="reply-head">
+        <div class="avatar">RK</div>
+        <div>
+          <div class="reply-name">Raj Kapoor</div>
+          <div class="reply-sub">Director of IT · Meridian Health</div>
+        </div>
+      </div>
+      <div class="reply-body">“Good timing — this has been on our roadmap for Q4. Send over some times.”</div>
+      <span class="tag">Meeting booked</span>
+    </div>
+    <div class="reply tilt-r">
+      <div class="reply-head">
+        <div class="avatar g">SL</div>
+        <div>
+          <div class="reply-name">Sara Lindqvist</div>
+          <div class="reply-sub">COO · Fairbanks Supply</div>
+        </div>
+      </div>
+      <div class="reply-body">“Not for us right now, but reach back out in January — and yes, keep us on the list.”</div>
+      <span class="tag">Future pipeline</span>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap stats-row">
+    <div class="stat"><b>2,400+</b><span>positive replies delivered</span></div>
+    <div class="stat"><b>96%</b><span>inbox placement</span></div>
+    <div class="stat"><b>14</b><span>industries served</span></div>
+    <div class="stat"><b>3 wks</b><span>to first booked meeting</span></div>
+  </div>
+</section>
+
+<section class="how wrap">
+  <div class="how-grid">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>We map your buyers</h3>
+      <p>A hand-built list of the people who actually sign — not a scraped blast list of 50,000 strangers.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>We start conversations</h3>
+      <p>Short, specific, human emails sent from warmed domains that protect your name and land in the inbox.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>You take the meetings</h3>
+      <p>Interested replies get routed to you in real time. Your only job is showing up and closing.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Two minutes now. Warm replies in three weeks.</h2>
+      <p class="sub">
+        Tell us what you sell and who buys it. We'll respond within one
+        business day with a straight answer on whether outbound can work
+        for your business.
+      </p>
+      <div class="quote">
+        “First campaign, first week: four replies, two meetings, one proposal out the door.”
+        <cite>— Placeholder testimonial · Founder, B2B services co.</cite>
+      </div>
+    </div>
+
+    <div>
+      <form id="lead-form">
+        <div class="field-row">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Jane Smith" required>
+          </div>
+          <div>
+            <label for="email">Work email</label>
+            <input id="email" name="email" type="email" placeholder="jane@company.com" required>
+          </div>
+        </div>
+        <div>
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" placeholder="Company, Inc.">
+        </div>
+        <div>
+          <label for="message">What do you sell, and who buys it?</label>
+          <textarea id="message" name="message" placeholder="We sell… our best customers are…"></textarea>
+        </div>
+        <button class="btn" type="submit">Request an intro call</button>
+        <p class="form-note">We read every submission. No newsletters, no drip sequences.</p>
+      </form>
+      <div class="success" id="success">
+        <b>Thanks — we got it.</b><br>
+        Keep an eye on your inbox; a real person will reply within one business day.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Reach Rail · Orange County, CA · hello@reachrail.com
+</footer>
+
+<script>
+  document.getElementById('lead-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+  });
+</script>
+</body>
+</html>
