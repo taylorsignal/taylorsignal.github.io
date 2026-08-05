@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Taylor Trusty - Newslever · Tech:OC</title>
-<meta name="description" content="Taylor Trusty — co-founder of Newslever (acquired by Similarweb) and writer of Tech:OC, a weekly Orange County tech newsletter." />
+<title>Taylor Trusty - Reach Rail · Tech:OC</title>
+<meta name="description" content="Taylor Trusty — co-founder of Reach Rail and writer of Tech:OC, a weekly Orange County tech newsletter." />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Taylor Trusty" />
-<meta property="og:description" content="Co-founder of Newslever. Writer of Tech:OC. Host of Founder Secrets." />
+<meta property="og:description" content="Taylor Trusty — co-founder of Reach Rail and writer of Tech:OC" />
 <meta property="og:image" content="https://taylortrusty.com/images/taylortrusty.jpg" />
 <meta property="og:url" content="https://taylortrusty.com" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -88,6 +88,8 @@
     letter-spacing:.01em;margin:0;padding:0;list-style:none;
   }
   .role li{ display:inline-flex;align-items:center;gap:8px }
+  .role a{ color:var(--accent); text-decoration:none; font-weight:600; border-bottom:1px solid rgba(200,134,42,.32) }
+  .role a:hover{ border-bottom-color:var(--accent) }
   .role li:not(:last-child)::after{ content:"";width:3px;height:3px;border-radius:50%;background:var(--faint) }
   /* location pin in footer */
   footer .pin{ width:12px; height:12px; fill:currentColor; vertical-align:-1px; opacity:.85; margin-right:1px }
@@ -97,6 +99,43 @@
   .bio p{ margin:0 0 17px; color:#3a3833; font-size:1.04rem }
   .bio a{ color:var(--accent); text-decoration:none; font-weight:500; border-bottom:1px solid rgba(200,134,42,.32) }
   .bio a:hover{ border-bottom-color:var(--accent) }
+
+  /* ---- Reach Rail CTA: warm amber card ---- */
+  .rr-cta{
+    margin:34px 0 0;
+    background:linear-gradient(135deg, rgba(200,134,42,.09), rgba(200,134,42,.02));
+    border:1px solid rgba(200,134,42,.35);
+    border-radius:var(--radius);
+    padding:26px;
+  }
+  .rr-cta .rr-top{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;flex-wrap:wrap;text-align:left;
+  }
+  .rr-cta .eyebrow{
+    display:inline-block;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin:0 0 8px;
+  }
+  .rr-cta h2{
+    font-family:"Fraunces",Georgia,serif;font-weight:500;
+    font-size:1.4rem;margin:0 0 4px;line-height:1.2;
+  }
+  .rr-cta p.sub{ color:var(--muted);margin:0;font-size:.92rem }
+  .rr-btn{
+    flex-shrink:0;cursor:pointer;border:0;font:inherit;
+    background:var(--accent);color:#fff;font-weight:600;font-size:.92rem;
+    padding:12px 24px;border-radius:999px;
+    box-shadow:0 6px 18px rgba(200,134,42,.35);
+    transition:transform .12s,box-shadow .15s,background .15s;
+  }
+  .rr-btn:hover{ transform:translateY(-2px);box-shadow:0 10px 24px rgba(200,134,42,.4);background:#b97a22 }
+  #rr-calendly{ display:none;margin-top:22px;height:680px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff }
+  #rr-calendly.open{ display:block }
+  #rr-calendly div, #rr-calendly iframe{ width:100% !important;height:100% !important;border:0 }
+  @media (max-width:600px){
+    .rr-cta .rr-top{ flex-direction:column;align-items:flex-start }
+    .rr-btn{ width:100%;text-align:center }
+  }
 
   /* ---- CTA: inverted dark block for punch ---- */
   .cta{
@@ -139,34 +178,44 @@
       <img class="avatar" src="images/taylortrusty.jpg" alt="Taylor Trusty" />
       <h1>Taylor Trusty</h1>
       <ul class="role">
-        <li>Newslever</li><li>Tech:OC</li>
+        <li><a href="https://reachrail.com" target="_blank">Reach Rail</a></li><li><a href="https://techoc.co" target="_blank">Tech:OC</a></li>
       </ul>
     </header>
-      
+
+    <section class="bio">
+      <p>Hi! I’m Taylor, a cold email nerd, recovering SaaS founder, and publisher of <a href="https://techoc.co" target="_blank">Tech:OC</a>, a weekly newsletter for 4,000+ Orange County tech readers.</p>
+        
+        <p>Recovery is going poorly. I'm back at it with <a href="https://reachrail.com" target="_blank">Reach Rail</a>, helping SaaS companies generate 10+ leads a month through cold email.</p>    
+        
+      <p>Before this, I co-founded Newslever, a competitor intelligence platform <a href="https://www.similarweb.com/corp/about/acquisitions/newslever/" target="_blank">acquired by Similarweb in 2025</a>. We grew to 600+ customers - including Nasdaq, Deloitte, and  Airbus - almost entirely through cold email.</p>
+
+      <p>I started coding at 13, launched an ecommerce company at 19, and then co-founded Blackstone Media, a digital agency <a href="https://www.lanereport.com/106761/2018/10/blackstone-media-merges-with-boston-mass-digital-transformation-agency/" target="_blank">acquired in 2018</a>.</p> 
+
+      <p>I’m originally from Kentucky, spent eight years in New York City, and now live in Dana Point with my wife, our son, and goldendoodle. <a href="mailto:hi@taylortrusty.com?Subject=Hello!">I'm always game for South OC coffees!</a></p>
+    </section>
+
+    <section class="rr-cta" aria-labelledby="rr-title">
+      <div class="rr-top">
+        <div>
+          <span class="eyebrow">Reach Rail</span>
+          <h2 id="rr-title">Want 10+ leads a month?</h2>
+          <p class="sub">Grab 20 minutes and I&rsquo;ll show you how we&rsquo;d run cold email for you.</p>
+        </div>
+        <button class="rr-btn" id="rr-book" aria-expanded="false" aria-controls="rr-calendly">Book an intro call</button>
+      </div>
+      <div id="rr-calendly"></div>
+    </section>
+
     <section class="cta" aria-labelledby="cta-title">
       <span class="eyebrow">Tech:OC Newsletter</span>
       <h2 id="cta-title">OC tech, every Sunday.</h2>
-      <p class="sub">Events, news, and what's happening in Orange County tech. Free.</p>
+      <p class="sub">Human curated (by me!) events, news, and what's happening in Orange County tech</p>
 
       <!-- beehiiv v3 subscribe form — Tech:OC -->
       <div class="beehiiv-embed">
         <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="240b183f-ac32-47f7-b241-ccc8598bc049"></script>
       </div>
     </section>  
-
-    <section class="bio">
-      <p>Hi! I’m Taylor, a SaaS founder, newsletter writer, and cold email nerd.</p>
-        
-      <p>I co-founded Newslever, a competitor intelligence platform <a href="https://www.similarweb.com/corp/about/acquisitions/newslever/" target="_blank">acquired by Similarweb in 2025</a>. We grew it to 600+ customers - including teams at Nasdaq, Deloitte, and Airbus - almost entirely through cold outbound email.</p>
-
-      <p>Before Newslever, I co-founded Blackstone Media, a digital marketing agency <a href="https://www.lanereport.com/106761/2018/10/blackstone-media-merges-with-boston-mass-digital-transformation-agency/" target="_blank">acquired in 2018</a>.</p> 
-      
-      <p>These days I'm going deeper on cold outbound email, hosting OC founder events, and writing <a href="https://techoc.co" target="_blank">Tech:OC</a>, a weekly newsletter covering Orange County tech.</p>
-
-      <p>I’m originally from Kentucky, spent eight years in New York City, and now live in Dana Point with my wife, our son, and goldendoodle. <a href="mailto:hi@taylortrusty.com?Subject=Hello!">Feel free to reach out!</a></p>
-    </section>
-
-    
 
     <ul class="social">
       <li><a href="mailto:hi@taylortrusty.com" aria-label="Email" title="Email me: hi@taylortrusty.com">
@@ -181,11 +230,37 @@
       
     </ul>
 
-    <footer>© <span id="yr"></span> Taylor Trusty &nbsp;·&nbsp; <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"/></svg>Dana Point, CA</footer>
+    <footer>© <span id="yr"></span> Taylor Trusty &nbsp;·&nbsp; <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"/></svg> Dana Point, CA</footer>
   </main>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Reach Rail CTA — lazy-load the Calendly inline widget on first click
+  (function(){
+    var btn = document.getElementById('rr-book');
+    var cal = document.getElementById('rr-calendly');
+    var loaded = false;
+    btn.addEventListener('click', function(){
+      var open = cal.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      btn.textContent = open ? 'Hide calendar' : 'Book an intro call';
+      if (open && !loaded) {
+        loaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://assets.calendly.com/assets/external/widget.js';
+        s.async = true;
+        s.onload = function(){
+          Calendly.initInlineWidget({
+            url: 'https://calendly.com/taylor-reachrail/consult?hide_gdpr_banner=1&background_color=ffffff&text_color=1b1a18&primary_color=c8862a',
+            parentElement: cal
+          });
+        };
+        document.head.appendChild(s);
+      }
+      if (open) cal.scrollIntoView({ behavior:'smooth', block:'nearest' });
+    });
+  })();
 </script>
 
 <!-- beehiiv attribution — tags new signups with the referring site (taylortrusty.com) -->
