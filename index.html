@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Taylor Trusty" />
 <meta property="og:description" content="Taylor Trusty — co-founder of Reach Rail and writer of Tech:OC" />
-<meta property="og:image" content="https://taylortrusty.com/images/taylortrusty.jpg" />
+<meta property="og:image" content="https://taylortrusty.com/images/taylortrusty-2026.jpg" />
 <meta property="og:url" content="https://taylortrusty.com" />
 <meta name="twitter:card" content="summary_large_image" />
 
@@ -100,8 +100,13 @@
   .role a{ color:var(--accent); text-decoration:none; font-weight:600; border-bottom:1px solid rgba(200,134,42,.32) }
   .role a:hover{ border-bottom-color:var(--accent) }
   .role li:not(:last-child)::after{ content:"";width:3px;height:3px;border-radius:50%;background:var(--faint) }
-  /* location pin in footer */
-  footer .pin{ width:12px; height:12px; fill:currentColor; vertical-align:-1px; opacity:.85; margin-right:1px }
+  /* location pin in role line + footer */
+  .role .pin, footer .pin{ width:12px; height:12px; fill:currentColor; vertical-align:-1px; opacity:.85; margin-right:1px }
+  /* phones: location drops to its own line, so drop the dot before it */
+  @media (max-width:600px){
+    .role li.loc{ flex-basis:100%; justify-content:center }
+    .role li:nth-last-child(2)::after{ display:none }
+  }
 
   /* ---- Bio ---- */
   .bio{ margin:34px 0 0; padding-top:34px; border-top:2px dotted rgba(27,26,24,.18) }
@@ -176,18 +181,20 @@
 <body>
   <main class="wrap">
     <header>
-      <img class="avatar" src="images/taylortrusty.jpg" alt="Taylor Trusty" />
+      <img class="avatar" src="images/taylortrusty-2026.jpg" alt="Taylor Trusty" />
       <h1>Taylor Trusty</h1>
       <ul class="role">
-        <li><a href="https://reachrail.com" target="_blank">Reach Rail</a></li><li><a href="https://techoc.co" target="_blank">Tech:OC</a></li>
+        <li><a href="https://reachrail.com" target="_blank">Reach Rail</a></li><li><a href="https://techoc.co" target="_blank">Tech:OC</a></li><li class="loc"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"/></svg> Dana Point, CA</li>
       </ul>
     </header>
 
     <section class="bio">
-      <p>Hi! I’m Taylor, a cold email nerd, tech founder, and publisher of Tech:OC, the weekly newsletter for 4,000+ Orange County readers.</p>
-        
-        <p>I recently launched <a href="https://reachrail.com" target="_blank">Reach Rail</a>, helping SaaS companies generate 10+ leads a month through cold email.</p>
-        
+      <p>Hi! I’m Taylor, a cold email nerd, tech founder, and publisher of <a href="https://techoc.co" target="_blank" rel="noopener">Tech:OC</a>, the weekly tech newsletter for 5,000+ Orange County readers.</p>
+
+      <p>I recently launched <a href="https://reachrail.com" target="_blank">Reach Rail</a>, helping SaaS companies generate 10+ leads a month through cold email.</p>
+
+      <p>Previously, I co-founded Newslever, a competitor intelligence platform <a href="https://www.similarweb.com/corp/about/acquisitions/newslever/" target="_blank">acquired by Similarweb in 2025</a>. We grew to 600+ customers - including Nasdaq, Deloitte, and  Airbus - almost entirely through cold email.</p>
+
       <a class="rr-banner" id="rr-book" href="https://calendly.com/taylor-reachrail/consult" target="_blank" rel="noopener">
         <span class="cal-ico" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm12 8H5v9h14v-9zM8 12h3v3H8v-3z"/></svg>
@@ -198,12 +205,10 @@
         </span>
         <span class="arrow" aria-hidden="true">&rarr;</span>
       </a>
-        
-      <p>Previously, I co-founded Newslever, a competitor intelligence platform <a href="https://www.similarweb.com/corp/about/acquisitions/newslever/" target="_blank">acquired by Similarweb in 2025</a>. We grew to 600+ customers - including Nasdaq, Deloitte, and  Airbus - almost entirely through cold email.</p>
 
       <p>Before Newslever, I co-founded Blackstone Media, a digital agency <a href="https://www.lanereport.com/106761/2018/10/blackstone-media-merges-with-boston-mass-digital-transformation-agency/" target="_blank">acquired in 2018</a>. I started coding at 13 and launched an ecomm company at 19 - I just love computers and business!</p> 
 
-      <p>I’m originally from Kentucky, spent eight years in New York City, and now live in Dana Point with my wife, our son, and goldendoodle. <a href="mailto:hi@taylortrusty.com?Subject=Coffee!">I'm always game for OC coffees!</a></p>
+      <p>I’m originally from Kentucky, spent eight years in New York City, and now live in Dana Point with my wife, our son, and goldendoodle. I’m an active member of <a href="https://eonetwork.org" target="_blank" rel="noopener">EO</a> and <a href="https://pef.co/" target="_blank" rel="noopener">PEF</a>, and <a href="mailto:hi@taylortrusty.com?Subject=Coffee!">always game for OC coffees!</a></p>
     </section>
 
     <section class="cta" aria-labelledby="cta-title">
